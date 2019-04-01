@@ -1,0 +1,2696 @@
+[
+  {
+    "mods": [
+      {
+        "description": "用户分组接口",
+        "interfaces": [
+          {
+            "consumes": [
+              "application/json"
+            ],
+            "description": "登录接口",
+            "name": "queryByCode",
+            "method": "get",
+            "path": "/basGroup/queryByCode",
+            "response": {
+              "isArr": false,
+              "customType": "",
+              "reference": "defs.BasGroup",
+              "enum": [],
+              "isTemplateRef": false
+            },
+            "parameters": [
+              {
+                "in": "path",
+                "description": "分组code",
+                "name": "groupCode",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "string"
+                }
+              }
+            ]
+          },
+          {
+            "consumes": [
+              "application/json"
+            ],
+            "description": "统计分组各种人员数量",
+            "name": "statisticalGroupMemberNumber",
+            "method": "get",
+            "path": "/basGroup/statisticalGroupMemberNumber",
+            "response": {
+              "isArr": false,
+              "customType": "",
+              "reference": "defs.StatisticalGroupMemberNumber",
+              "enum": [],
+              "isTemplateRef": false
+            },
+            "parameters": [
+              {
+                "in": "body",
+                "description": "分组id",
+                "name": "groupId",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false
+                }
+              }
+            ]
+          }
+        ],
+        "name": "basGroup"
+      },
+      {
+        "description": "用户基本信息管理接口",
+        "interfaces": [
+          {
+            "consumes": [
+              "application/json"
+            ],
+            "description": "获取用户拥有的分组",
+            "name": "getUserRelByUserId",
+            "method": "get",
+            "path": "/basUser/getUserRelByUserId",
+            "response": {
+              "isArr": true,
+              "customType": "",
+              "reference": "defs.GroupUserRel",
+              "enum": [],
+              "isTemplateRef": false
+            },
+            "parameters": [
+              {
+                "in": "body",
+                "description": "用户id",
+                "name": "userId",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false
+                }
+              }
+            ]
+          },
+          {
+            "consumes": [
+              "application/json"
+            ],
+            "description": "更新用户分组姓名",
+            "name": "updateGroupNickName",
+            "method": "post",
+            "path": "/basUser/updateGroupNickName",
+            "response": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "boolean"
+            },
+            "parameters": [
+              {
+                "in": "body",
+                "description": "用户id",
+                "name": "userId",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false
+                }
+              },
+              {
+                "in": "body",
+                "description": "分组id",
+                "name": "groupId",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false
+                }
+              },
+              {
+                "in": "body",
+                "description": "群组昵称",
+                "name": "nickName",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false
+                }
+              }
+            ]
+          }
+        ],
+        "name": "basUser"
+      },
+      {
+        "description": "班级通知接口",
+        "interfaces": [
+          {
+            "consumes": [
+              "application/json"
+            ],
+            "description": "根据分组Id查询通知信息",
+            "name": "queryByGroupId",
+            "method": "get",
+            "path": "/biz/enroll/queryByGroupId",
+            "response": {
+              "isArr": false,
+              "customType": "",
+              "reference": "defs.Page<defs.BizEnroll>",
+              "enum": [],
+              "isTemplateRef": false
+            },
+            "parameters": [
+              {
+                "in": "query",
+                "description": "页号",
+                "name": "pageNumber",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "number"
+                }
+              },
+              {
+                "in": "query",
+                "description": "页面大小",
+                "name": "pageSize",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "number"
+                }
+              },
+              {
+                "in": "query",
+                "description": "排序字段",
+                "name": "sort",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "string"
+                }
+              },
+              {
+                "in": "query",
+                "description": "排序方式 asc/desc",
+                "name": "order",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "string"
+                }
+              },
+              {
+                "in": "query",
+                "description": "分组id",
+                "name": "groupId",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "number"
+                }
+              }
+            ]
+          },
+          {
+            "consumes": [
+              "application/json"
+            ],
+            "description": "根据id获取信息",
+            "name": "view",
+            "method": "get",
+            "path": "/biz/enroll/view",
+            "response": {
+              "isArr": false,
+              "customType": "",
+              "reference": "defs.BizEnroll",
+              "enum": [],
+              "isTemplateRef": false
+            },
+            "parameters": [
+              {
+                "in": "query",
+                "description": "id",
+                "name": "id",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "number"
+                }
+              }
+            ]
+          }
+        ],
+        "name": "bizEnroll"
+      },
+      {
+        "description": "消息总表",
+        "interfaces": [
+          {
+            "consumes": [
+              "application/json"
+            ],
+            "description": "根据分组Id查询分组信息",
+            "name": "queryByGroupId",
+            "method": "get",
+            "path": "/bizMessage/queryByGroupId",
+            "response": {
+              "isArr": false,
+              "customType": "",
+              "reference": "defs.Page<defs.BizMessage>",
+              "enum": [],
+              "isTemplateRef": false
+            },
+            "parameters": [
+              {
+                "in": "query",
+                "description": "页号",
+                "name": "pageNumber",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "number"
+                }
+              },
+              {
+                "in": "query",
+                "description": "页面大小",
+                "name": "pageSize",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "number"
+                }
+              },
+              {
+                "in": "query",
+                "description": "排序字段",
+                "name": "sort",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "string"
+                }
+              },
+              {
+                "in": "query",
+                "description": "排序方式 asc/desc",
+                "name": "order",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "string"
+                }
+              },
+              {
+                "in": "query",
+                "description": "分组id",
+                "name": "groupId",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "number"
+                }
+              }
+            ]
+          }
+        ],
+        "name": "bizMessage"
+      },
+      {
+        "description": "班级通知接口",
+        "interfaces": [
+          {
+            "consumes": [
+              "application/json"
+            ],
+            "description": "新增通知",
+            "name": "add",
+            "method": "post",
+            "path": "/bizNotice/add",
+            "response": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "boolean"
+            },
+            "parameters": [
+              {
+                "in": "body",
+                "description": "bizNotice",
+                "name": "bizNotice",
+                "required": true,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "defs.BizNotice",
+                  "enum": [],
+                  "isTemplateRef": false
+                }
+              }
+            ]
+          },
+          {
+            "consumes": [
+              "application/json"
+            ],
+            "description": "根据分组Id查询通知信息",
+            "name": "queryByGroupId",
+            "method": "get",
+            "path": "/bizNotice/queryByGroupId",
+            "response": {
+              "isArr": false,
+              "customType": "",
+              "reference": "defs.Page<defs.BizNotice>",
+              "enum": [],
+              "isTemplateRef": false
+            },
+            "parameters": [
+              {
+                "in": "query",
+                "description": "页号",
+                "name": "pageNumber",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "number"
+                }
+              },
+              {
+                "in": "query",
+                "description": "页面大小",
+                "name": "pageSize",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "number"
+                }
+              },
+              {
+                "in": "query",
+                "description": "排序字段",
+                "name": "sort",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "string"
+                }
+              },
+              {
+                "in": "query",
+                "description": "排序方式 asc/desc",
+                "name": "order",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "string"
+                }
+              },
+              {
+                "in": "query",
+                "description": "分组id",
+                "name": "groupId",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "number"
+                }
+              }
+            ]
+          },
+          {
+            "consumes": [
+              "application/json"
+            ],
+            "description": "根据id获取信息",
+            "name": "view",
+            "method": "get",
+            "path": "/bizNotice/view",
+            "response": {
+              "isArr": false,
+              "customType": "",
+              "reference": "defs.BizNotice",
+              "enum": [],
+              "isTemplateRef": false
+            },
+            "parameters": [
+              {
+                "in": "query",
+                "description": "id",
+                "name": "id",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "number"
+                }
+              }
+            ]
+          }
+        ],
+        "name": "bizNotice"
+      },
+      {
+        "description": "登录相关接口",
+        "interfaces": [
+          {
+            "consumes": [
+              "application/json"
+            ],
+            "description": "获取登录用户相关信息",
+            "name": "getInfo",
+            "method": "get",
+            "path": "/system/getInfo",
+            "response": {
+              "isArr": false,
+              "customType": "",
+              "reference": "defs.SystemUser",
+              "enum": [],
+              "isTemplateRef": false
+            },
+            "parameters": []
+          },
+          {
+            "consumes": [
+              "application/json"
+            ],
+            "description": "微信单点登录接口",
+            "name": "login",
+            "method": "post",
+            "path": "/system/ssoLogin",
+            "response": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "parameters": [
+              {
+                "in": "body",
+                "description": "登录凭证",
+                "name": "code",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false
+                }
+              },
+              {
+                "in": "query",
+                "description": "唯一标识",
+                "name": "id",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "number"
+                }
+              },
+              {
+                "in": "query",
+                "description": "创建者",
+                "name": "creator",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "string"
+                }
+              },
+              {
+                "in": "query",
+                "description": "创建时间",
+                "name": "createDate",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "number"
+                }
+              },
+              {
+                "in": "query",
+                "description": "更新者",
+                "name": "lastModifier",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "string"
+                }
+              },
+              {
+                "in": "query",
+                "description": "更新时间",
+                "name": "lastModDate",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "number"
+                }
+              },
+              {
+                "in": "query",
+                "description": "状态 0-启用，1-停用",
+                "name": "status",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "number"
+                }
+              },
+              {
+                "in": "query",
+                "description": "用户唯一标识",
+                "name": "openid",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "string"
+                }
+              },
+              {
+                "in": "query",
+                "description": "开放平台的唯一标识符",
+                "name": "unionid",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "string"
+                }
+              },
+              {
+                "in": "query",
+                "description": "用户昵称",
+                "name": "nickName",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "string"
+                }
+              },
+              {
+                "in": "query",
+                "description": "用户头像，最后一个数值代表正方形头像大小（有0、46、64、96、132数值可选，0代表640*640正方形头像），用户没有头像时该项为空。若用户更换头像，原有头像URL将失效。",
+                "name": "avatarUrl",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "string"
+                }
+              },
+              {
+                "in": "query",
+                "description": "用户的性别，值为1时是男性，值为2时是女性，值为0时是未知",
+                "name": "gender",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "number"
+                }
+              },
+              {
+                "in": "query",
+                "description": "用户所在城市",
+                "name": "city",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "string"
+                }
+              },
+              {
+                "in": "query",
+                "description": "用户所在省份",
+                "name": "province",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "string"
+                }
+              },
+              {
+                "in": "query",
+                "name": "country",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "string"
+                }
+              },
+              {
+                "in": "query",
+                "description": "用户绑定的手机号（国外手机号会有区号）",
+                "name": "phoneNumber",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "string"
+                }
+              },
+              {
+                "in": "query",
+                "description": "没有区号的手机号",
+                "name": "purePhoneNumber",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "string"
+                }
+              },
+              {
+                "in": "query",
+                "name": "countryCode",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "string"
+                }
+              },
+              {
+                "in": "query",
+                "description": "用户名",
+                "name": "username",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "string"
+                }
+              },
+              {
+                "in": "query",
+                "description": "密码",
+                "name": "password",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "string"
+                }
+              },
+              {
+                "in": "query",
+                "description": "分组数量",
+                "name": "groupNum",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "number"
+                }
+              },
+              {
+                "in": "query",
+                "description": "分组昵称",
+                "name": "groupNickName",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false,
+                  "primitiveType": "string"
+                }
+              }
+            ]
+          },
+          {
+            "consumes": [
+              "application/json"
+            ],
+            "description": "切换用户分组",
+            "name": "switchGroup",
+            "method": "post",
+            "path": "/system/switchGroup",
+            "response": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "boolean"
+            },
+            "parameters": [
+              {
+                "in": "body",
+                "description": "用户id",
+                "name": "userId",
+                "required": false,
+                "dataType": {
+                  "isArr": false,
+                  "customType": "",
+                  "reference": "",
+                  "enum": [],
+                  "isTemplateRef": false
+                }
+              }
+            ]
+          }
+        ],
+        "name": "system"
+      },
+      {
+        "description": "测试接口",
+        "interfaces": [
+          {
+            "consumes": [
+              "application/json"
+            ],
+            "description": "测试短信发送接口",
+            "name": "msg",
+            "method": "get",
+            "path": "/test/msg",
+            "response": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false
+            },
+            "parameters": []
+          }
+        ],
+        "name": "test"
+      }
+    ],
+    "baseClasses": [
+      {
+        "name": "BasAtts",
+        "properties": [
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "createDate",
+            "description": "创建时间"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "creator",
+            "description": "创建者"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "fileId",
+            "description": "文件id,上传第三方文件系统时，文件标识的id"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "fileName",
+            "description": "文件名称,用于显示"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "fileSize",
+            "description": "文件大小，单位是k"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "fileType",
+            "description": "文件类型"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "fileUrl",
+            "description": "文件访问路径"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "groupId",
+            "description": "所属群组id"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "id",
+            "description": "唯一标识"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "lastModDate",
+            "description": "更新时间"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "lastModifier",
+            "description": "更新者"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "sourceCode",
+            "description": "来源标识编码,通常是sourceId所对应的表名，如biz_notice表示通知；biz_enroll表示报名；"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "sourceId",
+            "description": "所属业务表id"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "status",
+            "description": "状态 0-启用，1-停用"
+          }
+        ]
+      },
+      {
+        "name": "BasGroup",
+        "properties": [
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "createDate",
+            "description": "创建时间"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "creator",
+            "description": "创建者"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "groupCode",
+            "description": "群号,9位数字构成,类似于QQ群的群号"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "groupName",
+            "description": "群组名称"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "id",
+            "description": "唯一标识"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "introduce",
+            "description": "群组介绍"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "isNeedCheck",
+            "description": "成员是否要审核，1：是；0：否；开启时，所加入的成员需审核后才能加入群组。"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "boolean"
+            },
+            "name": "joined",
+            "description": "是否加入"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "lastModDate",
+            "description": "更新时间"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "lastModifier",
+            "description": "更新者"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "memberLimit",
+            "description": "成员人数限制,-1表示无限制（该字段用于日后增值考虑）"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "memberNum",
+            "description": "成员人数"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "notice",
+            "description": "通知公告"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "phone",
+            "description": "手机号码"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "status",
+            "description": "状态 0-启用，1-停用"
+          }
+        ]
+      },
+      {
+        "name": "BasUser",
+        "properties": [
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "avatarUrl",
+            "description": "用户头像，最后一个数值代表正方形头像大小（有0、46、64、96、132数值可选，0代表640*640正方形头像），用户没有头像时该项为空。若用户更换头像，原有头像URL将失效。"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "city",
+            "description": "用户所在城市"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "country"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "countryCode"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "createDate",
+            "description": "创建时间"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "creator",
+            "description": "创建者"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "gender",
+            "description": "用户的性别，值为1时是男性，值为2时是女性，值为0时是未知"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "groupNickName",
+            "description": "分组昵称"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "groupNum",
+            "description": "分组数量"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "id",
+            "description": "唯一标识"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "lastModDate",
+            "description": "更新时间"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "lastModifier",
+            "description": "更新者"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "nickName",
+            "description": "用户昵称"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "openid",
+            "description": "用户唯一标识"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "password",
+            "description": "密码"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "phoneNumber",
+            "description": "用户绑定的手机号（国外手机号会有区号）"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "province",
+            "description": "用户所在省份"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "purePhoneNumber",
+            "description": "没有区号的手机号"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "status",
+            "description": "状态 0-启用，1-停用"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "unionid",
+            "description": "开放平台的唯一标识符"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "username",
+            "description": "用户名"
+          }
+        ]
+      },
+      {
+        "name": "BizEnroll",
+        "properties": [
+          {
+            "dataType": {
+              "isArr": true,
+              "customType": "",
+              "reference": "defs.BasAtts",
+              "enum": [],
+              "isTemplateRef": false
+            },
+            "name": "basAtts",
+            "description": "附件列表"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "content",
+            "description": "内容"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "createDate",
+            "description": "创建时间"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "creator",
+            "description": "创建者"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "creatorName",
+            "description": "创建人名称"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "endDate",
+            "description": "报名截止时间"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "enrollNum",
+            "description": "报名人数"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "groupId",
+            "description": "所属群组id"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "id",
+            "description": "唯一标识"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "lastModDate",
+            "description": "更新时间"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "lastModifier",
+            "description": "更新者"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "limitNum",
+            "description": "报名名额,-1表示不限；"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "readNum",
+            "description": "已读人数"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "status",
+            "description": "状态 0-启用，1-停用"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "title",
+            "description": "标题"
+          }
+        ]
+      },
+      {
+        "name": "BizMessage",
+        "properties": [
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "createDate",
+            "description": "创建时间"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "creator",
+            "description": "创建者"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "creatorName",
+            "description": "创建者名称"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "groupId",
+            "description": "所属群组id"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "id",
+            "description": "唯一标识"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "lastModDate",
+            "description": "更新时间"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "lastModifier",
+            "description": "更新者"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "messageContent",
+            "description": "消息内容"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "messageTitle",
+            "description": "消息名称"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "sourceCode",
+            "description": "来源标识编码,通常是sourceId所对应的表名，如biz_notice表示通知；biz_enroll表示报名；"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "sourceId",
+            "description": "所属业务表id"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "status",
+            "description": "状态 0-启用，1-停用"
+          }
+        ]
+      },
+      {
+        "name": "BizNotice",
+        "properties": [
+          {
+            "dataType": {
+              "isArr": true,
+              "customType": "",
+              "reference": "defs.BasAtts",
+              "enum": [],
+              "isTemplateRef": false
+            },
+            "name": "basAtts",
+            "description": "附件列表"
+          },
+          {
+            "dataType": {
+              "isArr": true,
+              "customType": "",
+              "reference": "defs.BasUser",
+              "enum": [],
+              "isTemplateRef": false
+            },
+            "name": "basUsers",
+            "description": "已读列表"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "content",
+            "description": "内容"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "createDate",
+            "description": "创建时间"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "creator",
+            "description": "创建者"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "creatorName",
+            "description": "创建人名称"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "groupId",
+            "description": "所属群组"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "id",
+            "description": "唯一标识"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "lastModDate",
+            "description": "更新时间"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "lastModifier",
+            "description": "更新者"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "readNum",
+            "description": "已读人数"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "status",
+            "description": "状态 0-启用，1-停用"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "title",
+            "description": "标题"
+          }
+        ]
+      },
+      {
+        "name": "GroupUserRel",
+        "properties": [
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "defs.BasGroup",
+              "enum": [],
+              "isTemplateRef": false
+            },
+            "name": "basGroup"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "defs.BasUser",
+              "enum": [],
+              "isTemplateRef": false
+            },
+            "name": "basUser"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "createDate",
+            "description": "创建时间"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "creator",
+            "description": "创建者"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "groupId",
+            "description": "群组id"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "id",
+            "description": "唯一标识"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "lastModDate",
+            "description": "更新时间"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "lastModifier",
+            "description": "更新者"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "nickName",
+            "description": "成员在群组中的昵称"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "remark",
+            "description": "备注，可用于用户申请加入群组时，填写的信息，用于审核依据"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "status",
+            "description": "状态 0-启用，1-停用"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "studentId",
+            "description": "关联学生id"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "userId",
+            "description": "用户id"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "userIdentity",
+            "description": "用户在群组中的身份，1：班主任（创建人) ；2：管理员；3：教师；4：家长。群组创建人默认是班主任，管理员由群主设置。"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "userStatus",
+            "description": "成员状态，审核不通过时，移除记录，只保留两种状态；0：待审核，1：正式成员；"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "userType",
+            "description": "用户类型(1:教师；2：家长)"
+          }
+        ]
+      },
+      {
+        "name": "Page<T0 = any>",
+        "properties": [
+          {
+            "dataType": {
+              "isArr": true,
+              "customType": "",
+              "reference": "T0",
+              "enum": [],
+              "isTemplateRef": true
+            },
+            "name": "content"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "boolean"
+            },
+            "name": "first"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "boolean"
+            },
+            "name": "last"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "number"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "numberOfElements"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "defs.Pageable",
+              "enum": [],
+              "isTemplateRef": false
+            },
+            "name": "pageable"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "size"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "defs.Sort",
+              "enum": [],
+              "isTemplateRef": false
+            },
+            "name": "sort"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "totalElements"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "totalPages"
+          }
+        ]
+      },
+      {
+        "name": "Pageable",
+        "properties": [
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "offset"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "pageNumber"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "pageSize"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "boolean"
+            },
+            "name": "paged"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "defs.Sort",
+              "enum": [],
+              "isTemplateRef": false
+            },
+            "name": "sort"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "boolean"
+            },
+            "name": "unpaged"
+          }
+        ]
+      },
+      {
+        "name": "Sort",
+        "properties": [
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "boolean"
+            },
+            "name": "sorted"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "boolean"
+            },
+            "name": "unsorted"
+          }
+        ]
+      },
+      {
+        "name": "StatisticalGroupMemberNumber",
+        "properties": [
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "adminNumber",
+            "description": "管理员数量"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "groupId",
+            "description": "分组id"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "groupName",
+            "description": "分组名称"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "memberNumber",
+            "description": "成员数量"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "ownerNumber",
+            "description": "群主数量"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "parentNumber",
+            "description": "家长数量"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "teacherNumber",
+            "description": "教师数量"
+          }
+        ]
+      },
+      {
+        "name": "SystemUser",
+        "properties": [
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "boolean"
+            },
+            "name": "admin",
+            "description": "是否管理员"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "avatarUrl",
+            "description": "头像"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "groupCode",
+            "description": "所在分组code"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "groupId",
+            "description": "所在分组id"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "groupName",
+            "description": "分组名称"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "groupNickName",
+            "description": "分组昵称"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "groupNotice",
+            "description": "所在分组公告"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "groupNum",
+            "description": "分组数量"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "boolean"
+            },
+            "name": "owner",
+            "description": "是否拥有者"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "string"
+            },
+            "name": "phoneNumber",
+            "description": "手机号码"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "defs.StatisticalGroupMemberNumber",
+              "enum": [],
+              "isTemplateRef": false
+            },
+            "name": "statisticalGroupMemberNumber",
+            "description": "分组数量统计"
+          },
+          {
+            "dataType": {
+              "isArr": false,
+              "customType": "",
+              "reference": "",
+              "enum": [],
+              "isTemplateRef": false,
+              "primitiveType": "number"
+            },
+            "name": "userId",
+            "description": "用户id"
+          }
+        ]
+      }
+    ]
+  }
+]
