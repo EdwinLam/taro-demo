@@ -15,7 +15,7 @@ export class Fetch extends BaseHttp {
    * 请求前处理
    * @param  {ctx} ctx
    */
-  protected async beforeRequest(ctx: Qky.http.ctx) {
+  protected async beforeRequest(ctx: qky.http.ctx) {
     const accessToken =Store.getStorage('accessToken')
     if(accessToken!=null)
       ctx.options =Object.assign(ctx.options,{header:{accessToken}})
@@ -30,4 +30,4 @@ export class Fetch extends BaseHttp {
   }
 }
 
-export default new Fetch()
+export default new Fetch().request

@@ -1,5 +1,9 @@
 {
-"originUrl": "http://localhost:8084/v2/api-docs",
-"outDir": "./api",
-"templatePath": "./pontTemplate"
+  "origins": [{
+    "originUrl": "http://localhost:8084/v2/api-docs",
+    "name": "classgroup",
+    "usingMultipleOrigins": true
+  }],
+  "outDir": "./api",
+  "templatePath": "./pontTemplate"
 }

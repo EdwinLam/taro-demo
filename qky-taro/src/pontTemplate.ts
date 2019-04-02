@@ -53,13 +53,13 @@ export default class MyGenerator extends CodeGenerator {
     //@ts-ignore
     bodyParams && requestArgs.push(`bodyParams: ${bodyParams}`);
     //@ts-ignore
-    requestArgs.push(`options?: Qky.http.options`);
+    // requestArgs.push(`options?: qky.http.options`);
     const requestParams = requestArgs.join(', ');
 
     let responseType = inter.responseType;
-    // if (responseType.includes('defs.')) {
-    //   responseType = responseType.replace(/defs\./g, '');
-    // }
+    if (responseType.includes('defs.')) {
+      responseType = responseType.replace(/defs\./g, '');
+    }
 
     return `
       ${isEmptyParams ? '' : 'export ' + paramsCode}
@@ -75,41 +75,31 @@ export default class MyGenerator extends CodeGenerator {
 
   /** 获取接口实现内容的代码 */
   getInterfaceContent(inter: Interface) {
+    const bodyParams = inter.getBodyParamsCode();
+    const paramsCode = inter.getParamsCode();
+    const isEmptyParams = paramsCode.replace(/(\n|\s)/g, '') === 'classParams{}';
     const contentType = inter.consumes && inter.consumes.length ? inter.consumes[0] : 'application/json';
-    // 生成参数注释
-    let params:string[] = []
-    let interFaceParams:string[] = []
-    let data:string[] = []
-    inter.parameters.forEach(el=>{
-          let baseType = el.dataType.primitiveType?el.dataType.primitiveType:'string'
-          let interfaceType = el.dataType.reference!==''?el.dataType.reference:baseType
-          interFaceParams.push(`/** ${el.description}*/${el.name}:${interfaceType}`)
-          data.push(el.name)
-          params.push(el.name)
-    })
-    params.push('options')
-    interFaceParams.push('/** 请求配置参数*/options?:Qky.http.options')
+
     const requestArgs: string[] = [];
-    interFaceParams && requestArgs.push(...interFaceParams);
-    const requestParamsInterFace = requestArgs.join(', ');
-    const requestParams = params.join(', ');
+    (bodyParams || !isEmptyParams) && requestArgs.push(`data`);
+    // requestArgs.push('options');
+    const requestParams = requestArgs.join(', ');
 
     return `
-    import fetch from '../../../utils/fetch'
+    import fetch from '../../../../utils/fetch';
+    
     /**
-    * ${inter.description}
-    */
-    export default function ${inter.name}({${requestParams}}:{${requestParamsInterFace}}) {
-      const fetchOption = Object.assign({
+     * @desc ${inter.description}
+     */
+    export function request(${requestParams}) {
+      return fetch({
         url: '${inter.path}',
         method: '${inter.method}',
         header: {
           'Content-Type': '${contentType}'
         },
-        ${data.length ? `data:{${data.join(',')}}` : ''}
-      },
-      options)
-      return fetch.request(fetchOption);
+        ${bodyParams || !isEmptyParams ? 'data' : ''}
+      });
     }
    `;
   }
@@ -122,7 +112,7 @@ export default class MyGenerator extends CodeGenerator {
        */
       ${mod.interfaces
         .map(inter => {
-          return `import ${inter.name} from './${inter.name}';`;
+          return `import * as ${inter.name} from './${inter.name}';`;
         })
         .join('\n')}
       export {
@@ -207,12 +197,12 @@ export class FileStructures extends pont.FileStructures {
     return `
       ${dsNames
         .map(name => {
-          return `import ${name} from './${name}';`;
+          return `import { ${name} } from './${name}';`;
         })
         .join('\n')}
       import defs from './api';
       export type apitype = typeof defs;
-      export const api = {${dsNames.join(',')}} as apitype;
+      export const api = {${dsNames.join(',')}}  as unknown as apitype;
       
     `;
   }

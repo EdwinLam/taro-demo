@@ -1,6 +1,6 @@
 import Taro from '@tarojs/taro'
 
-export default class store{
+export default class Store{
     /**
      * 从本地缓存中异步获取指定 key 对应的内容
      * @param {string} key

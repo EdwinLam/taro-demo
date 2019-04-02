@@ -1,16 +1,10 @@
 import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
+import { View } from '@tarojs/components'
+import {ButtonItem} from  '../../component'
 import './index.scss'
-import {API} from '../../api'
-import { observer, inject } from '@tarojs/mobx'
 
-interface test{
-  counterStore:any
-}
 
-@inject('counterStore')
-@observer
-export default class Index extends Component<test> {
+export default class Index extends Component {
 
   /**
    * 指定config的类型声明为: Taro.Config
@@ -23,30 +17,32 @@ export default class Index extends Component<test> {
     navigationBarTitleText: '首页'
   }
 
+  agreeAuth =async (res) => {
+    
+    console.log(res)
+    const { errMsg, userInfo } = res.detail
+    const loginRes = await Taro.login()
+    console.log(loginRes)
+    if (errMsg === 'getUserInfo:ok') {
+      Taro.showToast({
+        title: `微信昵称: ${userInfo.nickName}，请使用邮箱登录`,
+        icon: 'none'
+      })
+    } else {
+      Taro.showToast({
+        title: '授权失败',
+        icon: 'none'
+      })
+    }
+  }
+
   async componentWillMount () {
     
 
    }
 
-   increment = () => {
-    const { counterStore } = this.props
-    counterStore.increment()
-  }
-
-  decrement = () => {
-    const { counterStore } = this.props
-    counterStore.decrement()
-  }
-
-  incrementAsync = () => {
-    const { counterStore } = this.props
-    counterStore.incrementAsync()
-  }
 
   async componentDidMount () { 
-    API.basGroup.statisticalGroupMemberNumber({groupId:'',options:{url:'',method:'POST'}})
-    const res = await API.system.getInfo({})
-    console.log(res)
   }
 
   componentWillUnmount () { }
@@ -56,13 +52,14 @@ export default class Index extends Component<test> {
   componentDidHide () { }
 
   render () {
-    const { counterStore: { counter } } = this.props
     return (
       <View className='index'>
-        <div onClick={this.increment}>+</div>
-        <div onClick={this.decrement}>-</div>
-        <div onClick={this.incrementAsync}>Add Async</div>
-        <div>{counter}</div>
+       <ButtonItem
+        type='primary'
+        text='微信登录'
+        openType='getUserInfo'
+        onGetUserInfo={this.agreeAuth}
+      />
       </View>
     )
   }

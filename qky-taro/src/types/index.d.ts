@@ -1,4 +1,4 @@
-declare namespace Qky {
+declare namespace qky {
     /**用户信息 */
     interface userInfo{
       /**用户名称 */
@@ -17,6 +17,8 @@ declare namespace Qky {
           method: requestMethod
           /** 头部参数 */
           header?: any
+          /** 上传参数 */
+          data?:any
         }
         interface ctx {
             /**
