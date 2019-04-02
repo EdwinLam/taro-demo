@@ -21,7 +21,7 @@ export default function queryByGroupId({
     {
       url: '/bizMessage/queryByGroupId',
       method: 'get',
-      headers: {
+      header: {
         'Content-Type': 'application/json',
       },
       data: { pageNumber, pageSize, sort, order, groupId },

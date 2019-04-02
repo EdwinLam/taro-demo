@@ -13,7 +13,7 @@ export default function getUserRelByUserId({
     {
       url: '/basUser/getUserRelByUserId',
       method: 'get',
-      headers: {
+      header: {
         'Content-Type': 'application/json',
       },
       data: { userId },

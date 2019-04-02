@@ -1,5 +1,3 @@
-import RequestUtil from '../../../utils/fetch';
-
 export namespace defs {
   export class BasAtts {
     /** 创建时间 */
@@ -470,10 +468,10 @@ export namespace API {
         groupCode?: string;
       }
 
-      export type ResponseType = Promise<BasGroup>;
+      export type ResponseType = Promise<defs.BasGroup>;
       export function request(
         params: Params,
-        options?: RequestConfig,
+        options?: Qky.http.options,
       ): ResponseType;
     }
 
@@ -482,14 +480,13 @@ export namespace API {
      * /basGroup/statisticalGroupMemberNumber
      */
     export namespace statisticalGroupMemberNumber {
-      export type ResponseType = Promise<StatisticalGroupMemberNumber>;
+      export type ResponseType = Promise<defs.StatisticalGroupMemberNumber>;
       export function request(
         bodyParams: any,
-        options?: RequestConfig,
+        options?: Qky.http.options,
       ): ResponseType;
     }
   }
-
   /**
    * 用户基本信息管理接口
    */
@@ -499,10 +496,10 @@ export namespace API {
      * /basUser/getUserRelByUserId
      */
     export namespace getUserRelByUserId {
-      export type ResponseType = Promise<GroupUserRel[]>;
+      export type ResponseType = Promise<defs.GroupUserRel[]>;
       export function request(
         bodyParams: any,
-        options?: RequestConfig,
+        options?: Qky.http.options,
       ): ResponseType;
     }
 
@@ -514,7 +511,7 @@ export namespace API {
       export type ResponseType = Promise<boolean>;
       export function request(
         bodyParams: any,
-        options?: RequestConfig,
+        options?: Qky.http.options,
       ): ResponseType;
     }
   }
@@ -541,10 +538,10 @@ export namespace API {
         groupId?: number;
       }
 
-      export type ResponseType = Promise<Page<BizEnroll>>;
+      export type ResponseType = Promise<defs.Page<defs.BizEnroll>>;
       export function request(
         params: Params,
-        options?: RequestConfig,
+        options?: Qky.http.options,
       ): ResponseType;
     }
 
@@ -558,10 +555,10 @@ export namespace API {
         id?: number;
       }
 
-      export type ResponseType = Promise<BizEnroll>;
+      export type ResponseType = Promise<defs.BizEnroll>;
       export function request(
         params: Params,
-        options?: RequestConfig,
+        options?: Qky.http.options,
       ): ResponseType;
     }
   }
@@ -588,10 +585,10 @@ export namespace API {
         groupId?: number;
       }
 
-      export type ResponseType = Promise<Page<BizMessage>>;
+      export type ResponseType = Promise<defs.Page<defs.BizMessage>>;
       export function request(
         params: Params,
-        options?: RequestConfig,
+        options?: Qky.http.options,
       ): ResponseType;
     }
   }
@@ -608,7 +605,7 @@ export namespace API {
       export type ResponseType = Promise<boolean>;
       export function request(
         bodyParams: BizNotice,
-        options?: RequestConfig,
+        options?: Qky.http.options,
       ): ResponseType;
     }
 
@@ -630,10 +627,10 @@ export namespace API {
         groupId?: number;
       }
 
-      export type ResponseType = Promise<Page<BizNotice>>;
+      export type ResponseType = Promise<defs.Page<defs.BizNotice>>;
       export function request(
         params: Params,
-        options?: RequestConfig,
+        options?: Qky.http.options,
       ): ResponseType;
     }
 
@@ -647,10 +644,10 @@ export namespace API {
         id?: number;
       }
 
-      export type ResponseType = Promise<BizNotice>;
+      export type ResponseType = Promise<defs.BizNotice>;
       export function request(
         params: Params,
-        options?: RequestConfig,
+        options?: Qky.http.options,
       ): ResponseType;
     }
   }
@@ -664,8 +661,8 @@ export namespace API {
      * /system/getInfo
      */
     export namespace getInfo {
-      export type ResponseType = Promise<SystemUser>;
-      export function request(options?: RequestConfig): ResponseType;
+      export type ResponseType = Promise<defs.SystemUser>;
+      export function request(options?: Qky.http.options): ResponseType;
     }
 
     /**
@@ -722,7 +719,7 @@ export namespace API {
       export function request(
         params: Params,
         bodyParams: any,
-        options?: RequestConfig,
+        options?: Qky.http.options,
       ): ResponseType;
     }
 
@@ -734,7 +731,7 @@ export namespace API {
       export type ResponseType = Promise<boolean>;
       export function request(
         bodyParams: any,
-        options?: RequestConfig,
+        options?: Qky.http.options,
       ): ResponseType;
     }
   }
@@ -749,7 +746,7 @@ export namespace API {
      */
     export namespace msg {
       export type ResponseType = Promise<any>;
-      export function request(options?: RequestConfig): ResponseType;
+      export function request(options?: Qky.http.options): ResponseType;
     }
   }
 }

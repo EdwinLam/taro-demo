@@ -11,7 +11,7 @@ export default function getInfo({
     {
       url: '/system/getInfo',
       method: 'get',
-      headers: {
+      header: {
         'Content-Type': 'application/json',
       },
     },

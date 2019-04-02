@@ -17,7 +17,7 @@ export default function updateGroupNickName({
     {
       url: '/basUser/updateGroupNickName',
       method: 'post',
-      headers: {
+      header: {
         'Content-Type': 'application/json',
       },
       data: { userId, groupId, nickName },

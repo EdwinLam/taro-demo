@@ -2,7 +2,15 @@ import Taro, { Component, Config } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import './index.scss'
 import {API} from '../../api'
-export default class Index extends Component {
+import { observer, inject } from '@tarojs/mobx'
+
+interface test{
+  counterStore:any
+}
+
+@inject('counterStore')
+@observer
+export default class Index extends Component<test> {
 
   /**
    * 指定config的类型声明为: Taro.Config
@@ -20,6 +28,21 @@ export default class Index extends Component {
 
    }
 
+   increment = () => {
+    const { counterStore } = this.props
+    counterStore.increment()
+  }
+
+  decrement = () => {
+    const { counterStore } = this.props
+    counterStore.decrement()
+  }
+
+  incrementAsync = () => {
+    const { counterStore } = this.props
+    counterStore.incrementAsync()
+  }
+
   async componentDidMount () { 
     API.basGroup.statisticalGroupMemberNumber({groupId:'',options:{url:'',method:'POST'}})
     const res = await API.system.getInfo({})
@@ -33,9 +56,13 @@ export default class Index extends Component {
   componentDidHide () { }
 
   render () {
+    const { counterStore: { counter } } = this.props
     return (
       <View className='index'>
-        <Text>Hello world!</Text>
+        <div onClick={this.increment}>+</div>
+        <div onClick={this.decrement}>-</div>
+        <div onClick={this.incrementAsync}>Add Async</div>
+        <div>{counter}</div>
       </View>
     )
   }

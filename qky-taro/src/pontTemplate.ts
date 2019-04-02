@@ -53,13 +53,13 @@ export default class MyGenerator extends CodeGenerator {
     //@ts-ignore
     bodyParams && requestArgs.push(`bodyParams: ${bodyParams}`);
     //@ts-ignore
-    requestArgs.push(`options?: RequestConfig`);
+    requestArgs.push(`options?: Qky.http.options`);
     const requestParams = requestArgs.join(', ');
 
     let responseType = inter.responseType;
-    if (responseType.includes('defs.')) {
-      responseType = responseType.replace(/defs\./g, '');
-    }
+    // if (responseType.includes('defs.')) {
+    //   responseType = responseType.replace(/defs\./g, '');
+    // }
 
     return `
       ${isEmptyParams ? '' : 'export ' + paramsCode}
@@ -70,9 +70,7 @@ export default class MyGenerator extends CodeGenerator {
 
   /** 获取公共的类型定义代码 */
   getCommonDeclaration() {
-    return `
-    import RequestUtil from '../../../utils/fetch'
-    `;
+    return ``;
   }
 
   /** 获取接口实现内容的代码 */
@@ -105,7 +103,7 @@ export default class MyGenerator extends CodeGenerator {
       const fetchOption = Object.assign({
         url: '${inter.path}',
         method: '${inter.method}',
-        headers: {
+        header: {
           'Content-Type': '${contentType}'
         },
         ${data.length ? `data:{${data.join(',')}}` : ''}

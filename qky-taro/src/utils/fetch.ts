@@ -1,12 +1,13 @@
 import Taro from '@tarojs/taro'
 import BaseHttp from '../base/BaseHttp'
+import Store from './store'
 
 /**
  * 网络请求相关基础类
  * @class BaseHttp
  * @constructor
  */
-class Fetch extends BaseHttp {
+export class Fetch extends BaseHttp {
   constructor() {
     super(Taro.request)
   }
@@ -14,9 +15,11 @@ class Fetch extends BaseHttp {
    * 请求前处理
    * @param  {ctx} ctx
    */
-  protected beforeRequest(ctx: Qky.http.ctx) {
-    console.log(ctx.options)
-  }
+  protected async beforeRequest(ctx: Qky.http.ctx) {
+    const accessToken =Store.getStorage('accessToken')
+    if(accessToken!=null)
+      ctx.options =Object.assign(ctx.options,{header:{accessToken}})
+    }
 
   /**
    * 请求后处理

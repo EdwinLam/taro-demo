@@ -1,5 +1,4 @@
 import fetch from '../../../utils/fetch';
-import { defs } from '~/api/api';
 /**
  * 新增通知
  */
@@ -14,7 +13,7 @@ export default function add({
     {
       url: '/bizNotice/add',
       method: 'post',
-      headers: {
+      header: {
         'Content-Type': 'application/json',
       },
       data: { bizNotice },

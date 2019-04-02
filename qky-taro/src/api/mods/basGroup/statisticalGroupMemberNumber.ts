@@ -1,5 +1,7 @@
 import fetch from '../../../utils/fetch';
-
+/**
+ * 统计分组各种人员数量
+ */
 export default function statisticalGroupMemberNumber({
   groupId,
   options,
@@ -11,7 +13,7 @@ export default function statisticalGroupMemberNumber({
     {
       url: '/basGroup/statisticalGroupMemberNumber',
       method: 'get',
-      headers: {
+      header: {
         'Content-Type': 'application/json',
       },
       data: { groupId },

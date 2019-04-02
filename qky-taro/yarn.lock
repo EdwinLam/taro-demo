@@ -79,8 +79,8 @@
     to-fast-properties "^2.0.0"
 
 "@tarojs/async-await@^1.2.20":
-  version "1.2.20"
-  resolved "https://registry.yarnpkg.com/@tarojs/async-await/-/async-await-1.2.20.tgz#41f584ce9fbbabbce5ac50766141c72379a9d003"
+  version "1.2.22"
+  resolved "https://registry.yarnpkg.com/@tarojs/async-await/-/async-await-1.2.22.tgz#70d14effd401ed9acab3e98d89776bfab1cb704a"
   dependencies:
     promise-polyfill "^7.1.2"
     regenerator-runtime "^0.11.1"
@@ -96,6 +96,27 @@
     resolve-pathname "^3.0.0"
     swiper "^4.4.2"
     weui "^1.1.2"
+
+"@tarojs/mobx-common@1.2.22":
+  version "1.2.22"
+  resolved "https://registry.yarnpkg.com/@tarojs/mobx-common/-/mobx-common-1.2.22.tgz#c3c62567b3c4deb5df9b3b286de6091854f4bef4"
+
+"@tarojs/mobx-h5@^1.2.22":
+  version "1.2.22"
+  resolved "https://registry.yarnpkg.com/@tarojs/mobx-h5/-/mobx-h5-1.2.22.tgz#65c515711e59d81f622be5d99fdbcfd53f9253ba"
+  dependencies:
+    "@tarojs/mobx-common" "1.2.22"
+
+"@tarojs/mobx-rn@^1.2.22":
+  version "1.2.22"
+  resolved "https://registry.yarnpkg.com/@tarojs/mobx-rn/-/mobx-rn-1.2.22.tgz#29092e5519c5ba15cde2fcf1311a3ee9502f58cf"
+  dependencies:
+    "@tarojs/mobx-common" "1.2.22"
+    "@tarojs/taro-rn" "1.1.7"
+
+"@tarojs/mobx@^1.2.22":
+  version "1.2.22"
+  resolved "https://registry.yarnpkg.com/@tarojs/mobx/-/mobx-1.2.22.tgz#e011928be095f9236848f181095fb34e8198900c"
 
 "@tarojs/plugin-babel@1.2.20":
   version "1.2.20"
@@ -150,6 +171,17 @@
     mobile-detect "^1.4.2"
     whatwg-fetch "^2.0.4"
 
+"@tarojs/taro-rn@1.1.7":
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/@tarojs/taro-rn/-/taro-rn-1.1.7.tgz#8307fd48292a58c5f2174bc6573cda5b294354e3"
+  dependencies:
+    "@tarojs/taro" "1.1.7"
+    base64-js "^1.3.0"
+    react-native-image-zoom-viewer "^2.2.13"
+    react-native-root-siblings "^3.1.0"
+    react-native-root-toast "^3.0.1"
+    react-native-stylekit "^1.0.0"
+
 "@tarojs/taro-swan@1.2.20":
   version "1.2.20"
   resolved "https://registry.yarnpkg.com/@tarojs/taro-swan/-/taro-swan-1.2.20.tgz#38af19a2d17fbd63b5de92c831cd8a67d409d39e"
@@ -176,6 +208,10 @@
     "@tarojs/utils" "1.2.20"
     lodash "^4.17.10"
     prop-types "^15.6.1"
+
+"@tarojs/taro@1.1.7":
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/@tarojs/taro/-/taro-1.1.7.tgz#2377d1d9fbd5e8e6ade59c4d1c744d46dd120912"
 
 "@tarojs/taro@1.2.20":
   version "1.2.20"
@@ -239,8 +275,8 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.0.tgz#4c48fed958d6dcf9487195a0ef6456d5f6e0163a"
 
 "@types/react@^16.4.6":
-  version "16.8.8"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.8.tgz#4b60a469fd2469f7aa6eaa0f8cfbc51f6d76e662"
+  version "16.8.10"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.10.tgz#1ccb6fde17f71a62ef055382ec68bdc379d4d8d9"
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
@@ -4118,6 +4154,10 @@ mobile-detect@^1.4.2:
   version "1.4.3"
   resolved "https://registry.yarnpkg.com/mobile-detect/-/mobile-detect-1.4.3.tgz#e436a3839f5807dd4d3cd4e081f7d3a51ffda2dd"
 
+mobx@4.8.0:
+  version "4.8.0"
+  resolved "https://registry.yarnpkg.com/mobx/-/mobx-4.8.0.tgz#6059feb9e0d3440acca5ae192daad63198b1180f"
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -4193,12 +4233,12 @@ neo-async@^2.5.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.0.tgz#b9d15e4d71c6762908654b5183ed38b753340835"
 
 nerv-devtools@^1.3.9:
-  version "1.3.12"
-  resolved "https://registry.yarnpkg.com/nerv-devtools/-/nerv-devtools-1.3.12.tgz#b6cf56e61fb2a813e1a5e80e317946ac4accd9bc"
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/nerv-devtools/-/nerv-devtools-1.3.13.tgz#600717e7652bdc163fe81123afd364719caf0468"
   dependencies:
     nerv-shared "1.3.7"
     nerv-utils "1.3.12"
-    nervjs "1.3.12"
+    nervjs "1.3.13"
 
 nerv-shared@1.3.7:
   version "1.3.7"
@@ -4208,7 +4248,14 @@ nerv-utils@1.3.12:
   version "1.3.12"
   resolved "https://registry.yarnpkg.com/nerv-utils/-/nerv-utils-1.3.12.tgz#f08d26e46dfe84f4159654941e37392fc6ee2768"
 
-nervjs@1.3.12, nervjs@^1.3.0, nervjs@^1.3.9:
+nervjs@1.3.13, nervjs@^1.3.9:
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/nervjs/-/nervjs-1.3.13.tgz#0f3d5d5d09ced9c9a2329c4172cd707b32a1cc42"
+  dependencies:
+    nerv-shared "1.3.7"
+    nerv-utils "1.3.12"
+
+nervjs@^1.3.0:
   version "1.3.12"
   resolved "https://registry.yarnpkg.com/nervjs/-/nervjs-1.3.12.tgz#2c19919007876fa6e40104e01f85decd84f48898"
   dependencies:
@@ -4923,7 +4970,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.6.1, prop-types@^15.6.2:
+prop-types@^15.5.10, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   dependencies:
@@ -5049,6 +5096,34 @@ rc@^1.2.7:
 react-is@^16.8.1:
   version "16.8.4"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.4.tgz#90f336a68c3a29a096a3d648ab80e87ec61482a2"
+
+react-native-image-pan-zoom@^2.1.9:
+  version "2.1.11"
+  resolved "https://registry.yarnpkg.com/react-native-image-pan-zoom/-/react-native-image-pan-zoom-2.1.11.tgz#61bcb69219d95e76a9797d23e4a2e8e0bd654ae9"
+
+react-native-image-zoom-viewer@^2.2.13:
+  version "2.2.25"
+  resolved "https://registry.yarnpkg.com/react-native-image-zoom-viewer/-/react-native-image-zoom-viewer-2.2.25.tgz#61d0978b26d5a07bbbdfe04791818e49d1e538a0"
+  dependencies:
+    react-native-image-pan-zoom "^2.1.9"
+
+react-native-root-siblings@^3.0.0, react-native-root-siblings@^3.1.0:
+  version "3.1.7"
+  resolved "https://registry.yarnpkg.com/react-native-root-siblings/-/react-native-root-siblings-3.1.7.tgz#9af7cf7495311db9fbe929201a3234ed114cfe77"
+  dependencies:
+    prop-types "^15.6.2"
+    static-container "^1.0.0"
+
+react-native-root-toast@^3.0.1:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-root-toast/-/react-native-root-toast-3.0.2.tgz#85c0c50d300c895a35ea98587b4ad4c9540297ee"
+  dependencies:
+    prop-types "^15.5.10"
+    react-native-root-siblings "^3.0.0"
+
+react-native-stylekit@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-stylekit/-/react-native-stylekit-1.0.0.tgz#96fc013345b8d3cd60dfdaced0d47af7a9d5316b"
 
 read-pkg-up@^1.0.1:
   version "1.0.1"
@@ -5735,6 +5810,10 @@ ssri@^5.2.4:
   dependencies:
     safe-buffer "^5.1.1"
 
+static-container@^1.0.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/static-container/-/static-container-1.3.0.tgz#e4f7b4be4e42954e3d1955ab7b3974a78b7bad87"
+
 static-extend@^0.1.1:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/static-extend/-/static-extend-0.1.2.tgz#60809c39cbff55337226fd5e0b520f341f1fb5c6"
@@ -6092,8 +6171,8 @@ typescript@^2.9.2:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.9.2.tgz#1cbf61d05d6b96269244eb6a3bce4bd914e0f00c"
 
 typescript@^3.0.1:
-  version "3.3.3333"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.3.3333.tgz#171b2c5af66c59e9431199117a3bcadc66fdcfd6"
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.4.1.tgz#b6691be11a881ffa9a05765a205cb7383f3b63c6"
 
 uglify-es@^3.3.4:
   version "3.3.9"

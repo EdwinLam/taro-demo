@@ -13,7 +13,7 @@ export default function switchGroup({
     {
       url: '/system/switchGroup',
       method: 'post',
-      headers: {
+      header: {
         'Content-Type': 'application/json',
       },
       data: { userId },

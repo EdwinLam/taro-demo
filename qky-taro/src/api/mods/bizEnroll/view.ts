@@ -13,7 +13,7 @@ export default function view({
     {
       url: '/biz/enroll/view',
       method: 'get',
-      headers: {
+      header: {
         'Content-Type': 'application/json',
       },
       data: { id },

@@ -13,7 +13,7 @@ export default function queryByCode({
     {
       url: '/basGroup/queryByCode',
       method: 'get',
-      headers: {
+      header: {
         'Content-Type': 'application/json',
       },
       data: { groupCode },

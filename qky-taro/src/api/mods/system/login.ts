@@ -55,7 +55,7 @@ export default function login({
     {
       url: '/system/ssoLogin',
       method: 'post',
-      headers: {
+      header: {
         'Content-Type': 'application/json',
       },
       data: {

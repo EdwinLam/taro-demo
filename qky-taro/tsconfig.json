@@ -3,6 +3,7 @@
     "jsx": "preserve",
     "target": "esnext",
     "module": "esnext",
+    "emitDecoratorMetadata":true,
     "removeComments": false,
     "preserveConstEnums": true,
     "moduleResolution": "node",

@@ -1,9 +1,6 @@
 import fetch from '../../../utils/fetch';
 /**
  * 根据分组Id查询通知信息
- * @param {Object} option - foo
- * @param {String} option.pageNumber - bar
- * @param {Number} option.sort - baz
  */
 export default function queryByGroupId({
   pageNumber,
@@ -24,7 +21,7 @@ export default function queryByGroupId({
     {
       url: '/biz/enroll/queryByGroupId',
       method: 'get',
-      headers: {
+      header: {
         'Content-Type': 'application/json',
       },
       data: { pageNumber, pageSize, sort, order, groupId },
@@ -33,5 +30,3 @@ export default function queryByGroupId({
   );
   return fetch.request(fetchOption);
 }
-
-queryByGroupId({pageNumber:0,groupId:1,order:'d',pageSize:1,sort:'2'})

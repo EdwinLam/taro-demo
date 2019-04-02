@@ -11,7 +11,7 @@ export default function msg({
     {
       url: '/test/msg',
       method: 'get',
-      headers: {
+      header: {
         'Content-Type': 'application/json',
       },
     },
