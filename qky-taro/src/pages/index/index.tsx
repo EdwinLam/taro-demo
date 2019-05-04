@@ -1,6 +1,5 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View } from '@tarojs/components'
-import {ButtonItem} from  '../../component'
 import './index.scss'
 
 

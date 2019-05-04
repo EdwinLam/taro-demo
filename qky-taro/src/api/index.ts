@@ -1,4 +1,4 @@
-import { classgroup } from './classgroup';
+import { ripple } from './ripple';
 import defs from './api';
 export type apitype = typeof defs;
-export const api = { classgroup } as unknown as apitype;
+export const api = ({ ripple } as unknown) as apitype;

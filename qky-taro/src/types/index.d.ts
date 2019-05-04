@@ -5,7 +5,7 @@ declare namespace qky {
       userName:string
     }
     namespace http{
-        type requestMethod = 'POST' | 'GET' | 'post' | 'get'
+        type requestMethod =  "POST" | "GET" | "OPTIONS" | "HEAD" | "PUT" | "DELETE" | "TRACE" | "CONNECT" | undefined | "post";
         export interface options {
           /**
            * 请求的url
@@ -16,7 +16,7 @@ declare namespace qky {
            */
           method: requestMethod
           /** 头部参数 */
-          header?: any
+          header: any
           /** 上传参数 */
           data?:any
         }
@@ -24,7 +24,7 @@ declare namespace qky {
             /**
              * 传入的参数
              */  
-            options ? : options
+            options : options
             /**
              * 获取的结果
              */ 

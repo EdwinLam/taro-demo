@@ -1,18 +1,20 @@
 import { observable, action } from 'mobx'
-import { api } from '@/api'
+import { api } from '../api'
+import Taro from '@tarojs/taro'
 /**
  * 系统相关
  */
-export default class SystemStore {
+class SystemStore {
     /**保存用户信息 */
-    @observable userInfo:qky.userInfo;
+    @observable 
+    userInfo:qky.userInfo;
 
-    constructor(userInfo:qky.userInfo) {
-        this.userInfo = userInfo;
-    }
 
-    @action
-    initSystem(){
-      api.classgroup.system.ssoLogin.request({code:'sds'})
+    @action 
+    async initSystem(userInfo){
+      const res:any = await Taro.login()
+      await api.ripple.system.ssoLogin.request(Object.assign(userInfo,{weChatCode:res.code}))
     }
 }
+
+export default new SystemStore()

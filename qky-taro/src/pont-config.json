@@ -1,7 +1,7 @@
 {
   "origins": [{
     "originUrl": "http://localhost:8084/v2/api-docs",
-    "name": "classgroup",
+    "name": "ripple",
     "usingMultipleOrigins": true
   }],
   "outDir": "./api",

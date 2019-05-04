@@ -1,2 +1,2 @@
-export * from './classgroup/api';
+export * from './ripple/api';
 export as namespace defs;

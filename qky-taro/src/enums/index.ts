@@ -1,3 +1,3 @@
-import ResponseCode from './ResponseCode'
-export {ResponseCode}
+import SystemCode from './SystemCode'
+export {SystemCode}
  

@@ -1,5 +1,5 @@
-import * as ButtonItem from './button'
+import QkyButton from './button'
 
-export default {
-    ButtonItem
+export {
+    QkyButton
 }

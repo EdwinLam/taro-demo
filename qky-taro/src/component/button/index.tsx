@@ -1,11 +1,11 @@
 import Taro, { Component } from '@tarojs/taro'
 import { Button, Text } from '@tarojs/components'
 import { ButtonProps } from '@tarojs/components/types/Button';
-interface ButtonItemProps extends ButtonProps{
+interface QkyButtonProps extends ButtonProps{
     /**文本说明 */
     text:string
 }
-export default class ButtonItem extends Component<ButtonItemProps> {
+export default class QkyButton extends Component<QkyButtonProps> {
     static defaultProps = {
         compStyle: '',
         textStyle: '',
